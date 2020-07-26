@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: lab1
+spec:
+  template:
+    spec:
+      serviceAccount: k8sland
+      containers:
+        - name: lab1
+          image: k8sland/verifier:v0.1.1
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/verifier", "-u=fernand", "-l=2"]
+          volumeMounts:
+            - mountPath: /assets
+              name: assets
+      restartPolicy: Never
+      volumes:
+        - name: assets
+          secret:
+            secretName: lab2
+  backoffLimit: 4

@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: lab1
+data:
+  solution.yml: CmFwaVZlcnNpb246IHYxCmtpbmQ6IFBvZAptZXRhZGF0YToKICBuYW1lOiBpY29ub2ZsaXgKc3BlYzoKICBjb250YWluZXJzOgogICAgLSBuYW1lOiBpY29ub2ZsaXgKICAgICAgaW1hZ2U6IHF1YXkuaW8vaW1ob3RlcGlvL2ljb25vZmxpeDptZW0KICAgICAgaW1hZ2VQdWxsUG9saWN5OiBJZk5vdFByZXNlbnQKICAgICAgcG9ydHM6CiAgICAgICAgLSBjb250YWluZXJQb3J0OiA0MDAwCgo=
