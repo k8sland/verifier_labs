@@ -7,13 +7,14 @@ This repo contains labs validators for K8sland level1 labs.
 To validate your lab:
 
 1. cd to the corresponding lab number
-2. Deploy!
+2. Edit the job.yml manifest and replace the `-u=fernand` with your own name
+3. Deploy!
 
       ```shell
       kubectl apply -f k8s
       ```
 
-3. Your instructor will notify you with your results
+4. Your instructor will notify you with your results
 
 ---
 <img src="assets/imhotep_logo.png" width="32" height="auto"/> © 2020 Imhotep Software LLC.
