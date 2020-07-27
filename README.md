@@ -15,6 +15,11 @@ To validate your lab:
       ```
 
 4. Your instructor will notify you with your results
+5. You can change your solution and re-submit the validation using:
+
+     ```shell
+     kubectl delete -f k8s && kubectl apply -f k8s
+     ```
 
 ---
 <img src="assets/imhotep_logo.png" width="32" height="auto"/> © 2020 Imhotep Software LLC.
