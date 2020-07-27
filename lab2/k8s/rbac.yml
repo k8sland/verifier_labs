@@ -11,7 +11,7 @@ metadata:
   name: k8sland
 rules:
   - apiGroups: [""]
-    resources: ["pods", "namespaces"]
+    resources: ["pods", "namespaces", "resourcequotas"]
     verbs:
       - get
       - list
