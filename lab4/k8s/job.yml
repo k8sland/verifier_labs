@@ -8,7 +8,7 @@ spec:
       serviceAccount: k8sland
       containers:
         - name: lab
-          image: k8sland/verifier:v0.1.1
+          image: k8sland/verifier:v1.0.0
           imagePullPolicy: IfNotPresent
           command: ["/bin/verifier", "--u=fernand", "--l=4", "--s"]
           volumeMounts:

@@ -8,8 +8,8 @@ spec:
       serviceAccount: k8sland
       containers:
         - name: lab
-          image: k8sland/verifier:v0.1.2
-          imagePullPolicy: Always
+          image: k8sland/verifier:v1.0.0
+          imagePullPolicy: IfNotPresent
           command: ["/bin/verifier", "--u=fernand", "--l=1", "--s"]
           volumeMounts:
             - mountPath: /assets
