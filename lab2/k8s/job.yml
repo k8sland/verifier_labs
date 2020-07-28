@@ -7,10 +7,10 @@ spec:
     spec:
       serviceAccount: k8sland
       containers:
-        - name: lab1
-          image: k8sland/verifier:v0.1.1
+        - name: lab
+          image: k8sland/verifier:v0.1.2
           imagePullPolicy: IfNotPresent
-          command: ["/bin/verifier", "-u=fernand", "-l=2"]
+          command: ["/bin/verifier", "--u=fernand", "--l=2", "--s"]
           volumeMounts:
             - mountPath: /assets
               name: assets
