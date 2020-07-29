@@ -10,8 +10,30 @@ kind: ClusterRole
 metadata:
   name: k8sland
 rules:
+  - apiGroups: ["autoscaling"]
+    resources: ["horizontalpodautoscalers"]
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups: ["apps"]
+    resources: ["statefulsets", "deployments"]
+    verbs:
+      - get
+      - list
+      - watch
   - apiGroups: [""]
-    resources: ["pods", "namespaces"]
+    resources:
+      [
+        "pods",
+        "namespaces",
+        "services",
+        "deployments",
+        "configmaps",
+        "secrets",
+        "persistentvolumes",
+        "persistentvolumeclaims",
+      ]
     verbs:
       - get
       - list
@@ -26,7 +48,6 @@ subjects:
   - kind: ServiceAccount
     name: k8sland
     namespace: default
-    apiGroup: ""
 roleRef:
   kind: ClusterRole
   name: k8sland

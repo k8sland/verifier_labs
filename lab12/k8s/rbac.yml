@@ -10,8 +10,25 @@ kind: ClusterRole
 metadata:
   name: k8sland
 rules:
+  - apiGroups: ["apps"]
+    resources: ["statefulsets"]
+    verbs:
+      - get
+      - list
+      - watch
+
   - apiGroups: [""]
-    resources: ["pods", "namespaces"]
+    resources:
+      [
+        "pods",
+        "namespaces",
+        "services",
+        "deployments",
+        "configmaps",
+        "secrets",
+        "persistentvolumes",
+        "persistentvolumeclaims",
+      ]
     verbs:
       - get
       - list
