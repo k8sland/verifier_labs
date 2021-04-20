@@ -7,12 +7,17 @@
 
 # K8sLand Level1 Lab Validation
 
-This repo contains labs validators for K8sland level1 labs.
+This repo contains labs validators for K8sland labs.
 
 To validate your lab:
 
-1. cd to the corresponding lab number
-2. Edit the job.yml manifest and replace the `-u=fernand` with your own name
+1. If you run bash use the provided `author.sh` bash script otherwise just globally replace `fernand` with your name.
+
+   ```shell
+   ./author.sh YOUR_NAME
+   ```
+
+2. cd to the corresponding lab
 3. Deploy!
 
       ```shell
@@ -23,6 +28,7 @@ To validate your lab:
 5. You can change your solution and re-submit the validation using:
 
      ```shell
+     cd XXX_LAB_XXXX
      kubectl delete -f k8s && kubectl apply -f k8s
      ```
 
