@@ -1,16 +1,17 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: lab4
+  name: pod
 spec:
+  ttlSecondsAfterFinished: 0
   template:
     spec:
       serviceAccount: k8sland
       containers:
         - name: lab
-          image: k8sland/verifier:v1.0.0
-          imagePullPolicy: IfNotPresent
-          command: ["/bin/verifier", "--u=fernand", "--l=4", "--s"]
+          image: k8sland/verifier:v1.2.1
+          imagePullPolicy: Always
+          command: ["/bin/verifier", "--u=fernand", "--l=pod", "--s"]
           volumeMounts:
             - mountPath: /assets
               name: assets
@@ -18,5 +19,5 @@ spec:
       volumes:
         - name: assets
           secret:
-            secretName: lab4
+            secretName: pod
   backoffLimit: 4

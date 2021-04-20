@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: lab5
+  name: namespace
 spec:
   template:
     spec:
       serviceAccount: k8sland
       containers:
         - name: lab
-          image: k8sland/verifier:v1.0.0
+          image: k8sland/verifier:v1.2.1
           imagePullPolicy: IfNotPresent
-          command: ["/bin/verifier", "--u=fernand", "--l=5", "--s"]
+          command: ["/bin/verifier", "--u=fernand", "--l=namespace", "--s"]
           volumeMounts:
             - mountPath: /assets
               name: assets
@@ -18,5 +18,5 @@ spec:
       volumes:
         - name: assets
           secret:
-            secretName: lab5
+            secretName: namespace
   backoffLimit: 4
